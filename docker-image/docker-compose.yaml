@@ -2,11 +2,12 @@ version: '2'
 
 services:
   board-ui:
-    image: nginx:alpine
+    image: eugenekha/board-ui:latest
     volumes:
-      - /content/board-ui/src:/usr/share/nginx/html
-    ports:
-      - "8080:80"
+      - /content/board/board-ui/src:/usr/share/nginx/html
+    #ports:
+    #  - "8081:80"
+    network_mode: "bridge"
   #environment:
   # - NGINX_HOST=foobar.com
   # - NGINX_PORT=80
